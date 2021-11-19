@@ -1,4 +1,3 @@
-package ChallengeOne;
 
 /**Take N (number of rows), print the following pattern (for N = 6)
 1

@@ -1,4 +1,3 @@
-package ChallengeOne;
 
 /*Take N as input. For a value of N=5, we wish to draw the following pattern :
 

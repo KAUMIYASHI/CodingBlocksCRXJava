@@ -1,4 +1,4 @@
-package ChallengeOne;
+
 /*
 Take N (number of rows), print the following pattern (for N = 4)
 0

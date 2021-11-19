@@ -1,4 +1,3 @@
-package ChallengeOne;
 
 /**Given a number N (denoting one of the legs of the triangle), Print its Pythagoras pair in increasing order if they exist. Otherwise, print "-1".
 

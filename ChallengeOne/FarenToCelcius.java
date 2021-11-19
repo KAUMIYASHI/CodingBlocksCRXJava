@@ -1,4 +1,3 @@
-package ChallengeOne;
 
 /**Take the following as input.
 

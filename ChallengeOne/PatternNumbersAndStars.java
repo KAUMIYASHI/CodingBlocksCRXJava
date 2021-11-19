@@ -1,4 +1,3 @@
-package ChallengeOne;
 
 /**Take as input N, a number. Print the pattern as given in output section for corresponding input.
 

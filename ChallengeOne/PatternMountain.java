@@ -1,4 +1,3 @@
-package ChallengeOne;
 
 import java.util.Scanner;
 
