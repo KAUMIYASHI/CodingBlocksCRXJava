@@ -1,0 +1,34 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    public static int getMin(String s){
+        // int len = s.length();
+        // s = s.replaceAll("[(]","");
+        // int len1 = s.length();
+        // int len2 = len - len1;
+        // return Math.abs(len1-len2);
+        int bal = 0;
+        int ans = 0;
+       
+        for (int i = 0; i < p.length(); ++i) {
+            bal =  bal + p.charAt(i) == '(' ? 1 : -1;
+            if (bal == -1) {
+                ans += 1;
+                bal += 1;
+            }
+        }
+       
+        return bal + ans;
+    }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		System.out.println(getMin("(()))"));
+	}
+}
