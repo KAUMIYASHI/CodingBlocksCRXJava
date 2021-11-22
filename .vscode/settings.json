@@ -1,3 +1,7 @@
 {
-  "java.project.sourcePaths": [".", "OneDimentionalArray", "ChallengeOne"]
+  "java.project.sourcePaths": [
+    ".",
+    "FunctionAndOneDimentionalArray",
+    "ChallengeOne"
+  ]
 }
