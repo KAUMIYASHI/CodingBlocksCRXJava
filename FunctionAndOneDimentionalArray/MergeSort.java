@@ -1,72 +1,55 @@
 public class MergeSort {
 
-    public static void merge(int[] arr, int l, int mid, int r) {
-        int n1 = mid - l + 1;
-        int n2 = r - mid;
-        int L[] = new int[n1];
-        int R[] = new int[n2];
-
-        for (int i = 0; i < n1; i++) {
-            L[i] = arr[l + i];
-        }
-        for (int i = 0; i < n2; i++) {
-            R[i] = arr[mid + i + 1];
-        }
-        for (int i : L)
-            System.out.print(i + " ");
-        System.out.println();
-        for (int i : R)
-            System.out.print(i + " ");
-        System.out.println("\n\n");
-
-        int mergedArr[] = new int[n1 + n2];
-        int i;
-        int j, c = 0;
-        for (i = 0, j = 0; i < n1 && j < n2;) {
+    public static int[] merge(int[] L, int R[]) {
+        int merged[] = new int[L.length + R.length];
+        int i = 0, j = 0, c = 0;
+        while (i < L.length && j < R.length) {
             if (L[i] < R[j]) {
-                mergedArr[c] = L[i];
+                merged[c] = L[i];
                 c++;
                 i++;
             } else {
-                mergedArr[c] = L[j];
+                merged[c] = R[j];
                 c++;
                 j++;
             }
         }
 
-        if (i < j) {
-            while (i < n1) {
-                mergedArr[c] = L[i];
+        if (i == L.length) {
+            while (j < R.length) {
+                merged[c] = R[j];
+                c++;
+                j++;
+            }
+        } else {
+            while (i < L.length) {
+                merged[c] = L[i];
                 c++;
                 i++;
             }
-        } else {
-            while (j < n2) {
-                mergedArr[c] = L[j];
-                c++;
-                j++;
-            }
         }
-
-        for (int k = 0; k < n1 + n2; k++) {
-            arr[l + i] = mergedArr[k];
-        }
+        return merged;
 
     }
 
-    public static void mergeSort(int[] arr, int l, int r) {
-        int mid = l + (r - l) / 2;
-        if (l < r) {
-            mergeSort(arr, mid + 1, r);
-            mergeSort(arr, l, mid);
-            merge(arr, l, mid, r);
+    public static int[] mergeSort(int[] arr, int l, int r) {
+        int mid = (l + r) / 2;
+        if (l == r) {
+            int baseArr[] = new int[1];
+            baseArr[0] = arr[l];
+            return baseArr;
         }
+        int L[] = mergeSort(arr, mid + 1, r);
+        int R[] = mergeSort(arr, l, mid);
+        int ans[] = merge(L, R);
+        return ans;
+
     }
 
     public static void main(String[] args) {
-        int arr[] = { 8, 1, 4 };
-        mergeSort(arr, 0, arr.length - 1);
-        for (int i : arr)
+        int arr[] = { 8, 1, 4, 5, 7, 6, 9, 10 };
+        int ans[] = mergeSort(arr, 0, arr.length - 1);
+        for (int i : ans)
             System.out.print(i + " ");
     }
 
